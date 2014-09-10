@@ -1,2 +1,54 @@
 Flask-Latch
 ===========
+
+Flask and Latch integration
+
+Installation
+-------------
+
+To install it, simply: ::
+   
+    git clone https://github.com/Xumeiquer/Flask-Latch.git
+    cd flask-latch
+    python setup.py install
+
+
+Requirements
+------------
+
+- Python >= 2.6
+- Flask >= 0.8
+
+It may work with Python >= 3 but is not tested
+
+
+Configuration
+-------------
+
+- not yet completed
+
+    
+TODO
+----
+
+
+Bugs and requests
+-----------------
+
+Please report any bug/issue or feature request in GitHub's issue tracker.
+
+https://github.com/Xumeiquer/Flask-Latch/issues
+
+
+License
+-------
+
+You can use this module under the MIT license. See LICENSE file for details.
+
+The rights for latch/latch.py belongs to ElevenPaths, more information and updated versionas at:
+https://github.com/ElevenPaths/latch-sdk-python
+
+Author
+------
+
+Developed by Jaume Martin
