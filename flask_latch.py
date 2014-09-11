@@ -10,14 +10,7 @@ __all__ = ['Latch']
 
 
 import sys
-from functools import wraps
 import latch
-from flask import current_app
-
-try:
-    from flask import _app_ctx_stack as stack
-except ImportError:
-    sys.stderr.write("Flask >= 0.9 is required.")
 
 
 class Latch(object):
@@ -35,22 +28,35 @@ class Latch(object):
         if secret_key is None:
             sys.stderr.write(
                 "LATCH_SECRET_KEY configuration values is required")
-        ctx = stack.top
-        ctx.latch = latch.Latch(app_id, secret_key)
+        if app_id is not None and secret_key is not None:
+            self.latch = latch.Latch(app_id, secret_key)
 
     def pair(self, token):
-        pass
+        if token:
+            response = self.latch.pair(token)
+            if response.get_error() == "":
+                return response.data["accountId"]
+            else:
+                return (response.error.code, response.error.message)
 
     def status(self, account_id):
-        ctx = stack.top
-        self.data = ctx.latch.data
-        print(self.data)
+        if account_id:
+            response = self.latch.status(account_id)
+            if response.get_error() == "":
+                return response.data["operations"][
+                    self.app.config.get("LATCH_APP_ID")]
+            else:
+                return (response.error.code, response.error.message)
 
     def unpair(self, account_id):
-        pass
+        if account_id:
+            response = self.latch.unpair(account_id)
+            if response.get_error() != response.get_data():
+                return (response.error.code, response.error.message)
 
-    def account_is_lock(self, account_id):
-        pass
+    def is_lock(self, account_id):
+        data = self.status(account_id)
+        return data["status"] == "off"
 
-    def account_is_unlock(self, account_id):
-        pass
+    def is_unlock(self, account_id):
+        return not self.is_lock(account_id)
