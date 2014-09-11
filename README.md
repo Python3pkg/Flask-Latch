@@ -9,7 +9,7 @@ Installation
 To install it, simply: ::
    
     git clone https://github.com/Xumeiquer/Flask-Latch.git
-    cd flask-latch
+    cd Flask-Latch
     python setup.py install
 
 
