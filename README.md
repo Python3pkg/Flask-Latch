@@ -25,11 +25,13 @@ It may work with Python >= 3 but is not tested
 Configuration
 -------------
 
-- not yet completed
+- not yet
 
     
 TODO
 ----
+
+- not yet
 
 
 Bugs and requests
