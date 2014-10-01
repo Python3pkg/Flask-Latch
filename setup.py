@@ -7,9 +7,11 @@ Latch extension for Flask
 from __future__ import with_statement
 from setuptools import setup
 
+from flask_latch import __version__
+
 setup(
     name='Flask-Latch',
-    version='0.0.1',
+    version=__version__,
     url='https://github.com/Xumeiquer/Flask-Latch',
     license='MIT',
     author='Jaume Martin',
