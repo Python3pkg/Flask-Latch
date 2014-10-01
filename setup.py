@@ -26,7 +26,7 @@ setup(
         'Flask>=0.8'
     ],
     classifiers=[
-        'Development Status :: Development',
+        'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
