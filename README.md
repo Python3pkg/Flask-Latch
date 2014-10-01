@@ -29,6 +29,7 @@ The configuration is really simple, you have to set up two new variables in the
 Flask application configuration.
 
 LATCH_APP_ID = "Your App ID"
+
 LATCH_SECRET_KEY = "Your App Secret Key"
 
     
