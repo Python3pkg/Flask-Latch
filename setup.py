@@ -4,7 +4,7 @@ Flask-Latch
 
 Latch extension for Flask
 """
-from __future__ import with_statement
+
 from setuptools import setup
 
 from flask_latch import __version__

@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 
-from __future__ import with_statement
+
 
 import unittest
 from flask import Flask
@@ -42,8 +42,8 @@ class TestLatch(unittest.TestCase):
 
     def test_pair_success(self):
         latch = Latch(self.app)
-        response = latch.pair(raw_input("Pair token: "))
-        assert isinstance(response, unicode)
+        response = latch.pair(input("Pair token: "))
+        assert isinstance(response, str)
         assert response == LATCH_ACCOUNT_ID
 
     def test_pair_failure(self):

@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-from flask_latch import Latch
+from .flask_latch import Latch
 
 __version_info__ = ('0', '1', '0')
 __version__ = '.'.join(__version_info__)
